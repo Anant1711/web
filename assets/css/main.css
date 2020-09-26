@@ -3909,7 +3909,7 @@ input, select, textarea {
   box-sizing: border-box;
 }
 body {
-  font-family: 'Serif', sans-serif;
+  font-family: sans-serif;
   background-color: #000;
   color: #eee;
 }
