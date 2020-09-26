@@ -3884,7 +3884,7 @@ input, select, textarea {
  padding: 2px;
  height: 3px;
  width: 18px;
- margin-top:43px;
+ margin-top:38px;
  margin-left:1px;  
  border-radius: 1px;
  background-color: #FF5347;
@@ -3919,8 +3919,8 @@ body {
 
 }
 .container p {
-  font-size: 1.6rem;
-  padding: 0.5rem;
+  font-size: 1.3rem;
+  padding: 0.1rem;
   
   letter-spacing: 0.1rem;
   text-align: center;
