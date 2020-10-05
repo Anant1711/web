@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Anant</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						  <div class="container">
+    <p>$ <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+  </div>
+						<h1 class="ml11">
+  <span class="text-wrapper">
+   <span class="logo__cursor" style="
+                   
+                 ">
+</span>
+</h1>
+						<nav>
+							<a href="#menu"></a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">About</a></li>
+							<li><a href="landing.html">Write-ups</a></li>
+							<li><a href="scripts.html">Pyhton-scripts</a></li>
+							
+						</ul>
+						
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Py-sharing</h1>
+									</header>
+									<span class="image main"><img src="images/pysharing/zlib.png" alt="" /></span>
+									Here is a script which allow us to share files from your Pc to another Pc
+									or Pc to Phone.
+									For that first we have to put our devices on local network 
+									(same network).<h4></h4>
+									I write this script for both Linux as well as Windows os, I'm more comfortable with Linux os, so this script will run perfectly on Linux os. But i have checked it on Windows also it worked well, even if there is a problem then tell me please! I'll help you out if I can.<h4></h4>
+									<h2><u>Linux :</u></h2>
+									<h4></h4>
+									If your base operating system is not linux, then you have to connect Wireless adapter to your machine because we need to connect our receiver device through local network, until you didn't connect wifi adapter Pc can't assign IPv4 address of Wireless LAN adapter.<h4></h4>
+									Once you connect adapter and set Pc and your Phone on same network.
+									<h4></h4>
+									open terminal and change the directory you want to share.<h4></h4>
+									Make sure you have python3, qrcode, installed on your system , If not then, run these command.<h4></h4>
+									<h4>> sudo apt-get install python3</h4>
+									<h4>> sudo apt-get install python3-qrcode</h4>
+									<h4></h4>
+									After that clone my repo from github website by git clone command. And give permission to py-sharing.py file.
+									<h4></h4>
+									<h4>> chmod +x py-sharing.py</h4>
+									<h4></h4>
+									and run this file as python3.
+									<h4></h4>
+									 <div class="polaroid">
+                                    <img src="images/pysharing/start54.png" alt="Norway" style="width:100%">
+                                    </div>
+                                    <h4></h4>
+                                    <h4></h4>
+                                    After Banner you can see, it gives hostname of your Pc after that it will assign you an IPv4 address and make an png file of <b>qrcode</b> which contain
+                                    your assigned IP and port on which server is running. By default I took port number 9004 (i don't why), you can take any random number (=<65535),
+                                    and in last line it shows "<b>serving HTTP on 0.0.0.0 port 9004 (http://0.0.0.0:9004)</b>" it means now our server can listen any IP (must be on same network) and ready to share files.
+                                    <h4></h4>
+                                    Here <b>0.0.0.0</b> means to <i><b>any IP address</b></i>, means any device can connect with this computer on 9004 port number but they both should be on same network.
+                                    <h4></h4>
+                                    Now you have two option either you type the ip in your browser which is assign to you on terminal with port (IP:PORT) or else you scan the qrcode image which is saved on the Desktop (Please change the Path png file will saved, I wrote path according to my system).
+                                    <h4></h4>
+                                    <h4></h4>
+                                     <div class="polaroid">
+                                    <img src="images/pysharing/pngg.png" alt="Norway" style="width:70%">
+                                    </div>
+                                    <h4></h4>
+                                    <h4></h4>
+                                    <div class="polaroid">
+                                    <img src="images/pysharing/linqr.jpeg" alt="Norway" style="width:50%">
+                                    </div>
+                                    <h4></h4>
+                                    Open it by web search, and you will see your directory's files are there.
+                                    <h4></h4>
+                                    <div class="polaroid">
+                                    <img src="images/pysharing/lindir.jpeg" alt="Norway" style="width:50%">
+                                    </div>
+                                    <h4></h4>
+                                    You can download from here to your phone or can just open and read.
+                                    <h4></h4>
+                                    All the history will shown on terminal as well.
+                                    <h4></h4>
+                                    <div class="polaroid">
+                                    <img src="images/pysharing/hist.png" alt="Norway" style="width:100%">
+                                    </div>
+                                    <h4></h4>
+                                    <h4></h4>
+                                    If you find this error,then try to change port number in the script. This error will not come in Windows.
+                                    <h4></h4>
+                                     <div class="polaroid">
+                                    <img src="images/pysharing/error.png" alt="Norway" style="width:100%">
+                                    </div>
+                                    <h4></h4>
+                                    <h2><u>Windows: </u></h2>
+                                    <h4></h4>
+                                    <h4></h4>
+                                    For Windows, we don't need any adapter just connect with your WiFi, and
+                                    here we go :)
+                                    <h4></h4>
+                                    first clone the repo from github, and then open cmd in that directory which you want to share.<h4></h4>
+                                    write <b>py-sharing.py</b> path with python (now i don't why in windows this script run with python not with python3, so use with python instead python3).<h></h>
+                                    <h3></h3>
+                                    <div class="polaroid">
+                                    <img src="images/pysharing/startwin.png" alt="Norway" style="width:100%">
+                                    </div>
+                                    <h4></h4>
+                                      Same as linux one, first it shows you your hostname and then assign IP and then start server, you can open in browser by type ip and port and you can scan qrcode.png file (here also please change the path in script).
+                                      <h4></h4>
+                                      <h4></h4>
+                                       <div class="polaroid">
+                                    <img src="images/pysharing/pnggwin.png" alt="Norway" style="width:100%">
+                                    </div>
+
+                                      <h4></h4>
+                                      <h4></h4>
+                                      <div class="polaroid">
+                                    <img src="images/pysharing/winqr.jpeg" alt="Norway" style="width:50%">
+                                    </div>
+                                    <h4></h4>
+                                    You will find your all files there of that directory in which you opened your cmd.
+                                    <h4></h4>
+                                    <h4></h4>
+                                    <div class="polaroid">
+                                    <img src="images/pysharing/windir.jpeg" alt="Norway" style="width:50%">
+                                    </div>
+                                    <h4></h4>
+                                    <h4></h4>
+                                    Detail of file you open in your phone it will be show in terminal.
+                                    <h4></h4>
+                                    <h4></h4>
+                                     <div class="polaroid">
+                                    <img src="images/pysharing/histwin.png" alt="Norway" style="width:100%">
+                                    </div>
+                                    <h4></h4>
+                                    <h4></h4>
+                                    <h3>Note: This script was written by me and i have very bad coding skills :) . So, please ignore if you find anything weird or please let me know I'll update it.</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									
+
+									
+								</div>
+							</section>
+
+					</div>
+
+				
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://twitter.com/_Anant_chauhan" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.linkedin.com/in/anant-chauhan-a07b2419b" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://medium.com/@Infinity_" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+								<li><a href="https://discord.com/channels/@infinity_#9175" class="icon brands alt fa-discord"><span class="label">Discord</span></a></li>
+								<li><a href="https://www.twitch.tv/anant_infinity" class="icon brands alt fa-twitch"><span class="label">Twitch</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; 2020</li><li>Anant</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
