@@ -1,22 +1,36 @@
 
 
-(function($) {
+(function ($) {
+	// Create the blur effect element
+	const blurEffect = document.createElement("div");
+	blurEffect.classList.add("cursor-effect");
+	document.body.appendChild(blurEffect);
 
-	var	$window = $(window),
+	// Update the position of the blur effect based on the cursor's movement
+	document.addEventListener("mousemove", (e) => {
+		const scrollX = window.scrollX || document.documentElement.scrollLeft;
+		const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+		blurEffect.style.transform = `translate(${e.clientX + scrollX - 39}px, ${e.clientY + scrollY - 39}px)`;
+	});
+
+
+
+	var $window = $(window),
 		$body = $('body'),
 		$wrapper = $('#wrapper'),
 		$header = $('#header'),
 		$banner = $('#banner');
 
 	// Breakpoints.
-		breakpoints({
-			xlarge:    ['1281px',   '1680px'   ],
-			large:     ['981px',    '1280px'   ],
-			medium:    ['737px',    '980px'    ],
-			small:     ['481px',    '736px'    ],
-			xsmall:    ['361px',    '480px'    ],
-			xxsmall:   [null,       '360px'    ]
-		});
+	breakpoints({
+		xlarge: ['1281px', '1680px'],
+		large: ['981px', '1280px'],
+		medium: ['737px', '980px'],
+		small: ['481px', '736px'],
+		xsmall: ['361px', '480px'],
+		xxsmall: [null, '360px']
+	});
 
 	/**
 	 * Applies parallax scrolling to an element's background image.
@@ -25,9 +39,9 @@
 
 
 
-	$.fn._parallax = (browser.name == 'ie' || browser.name == 'edge' || browser.mobile) ? function() { return $(this) } : function(intensity) {
+	$.fn._parallax = (browser.name == 'ie' || browser.name == 'edge' || browser.mobile) ? function () { return $(this) } : function (intensity) {
 
-		var	$window = $(window),
+		var $window = $(window),
 			$this = $(this);
 
 		if (this.length == 0 || intensity === 0)
@@ -35,7 +49,7 @@
 
 		if (this.length > 1) {
 
-			for (var i=0; i < this.length; i++)
+			for (var i = 0; i < this.length; i++)
 				$(this[i])._parallax(intensity);
 
 			return $this;
@@ -45,17 +59,17 @@
 		if (!intensity)
 			intensity = 0.25;
 
-		$this.each(function() {
+		$this.each(function () {
 
 			var $t = $(this),
 				on, off;
 
-			on = function() {
+			on = function () {
 
 				$t.css('background-position', 'center 100%, center 100%, center 0px');
 
 				$window
-					.on('scroll._parallax', function() {
+					.on('scroll._parallax', function () {
 
 						var pos = parseInt($window.scrollTop()) - parseInt($t.position().top);
 
@@ -66,7 +80,7 @@
 			};
 
 
-			off = function() {
+			off = function () {
 
 				$t
 					.css('background-position', '');
@@ -83,7 +97,7 @@
 
 		$window
 			.off('load._parallax resize._parallax')
-			.on('load._parallax resize._parallax', function() {
+			.on('load._parallax resize._parallax', function () {
 				$window.trigger('scroll');
 			});
 
@@ -93,307 +107,307 @@
 
 
 	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+	$window.on('load', function () {
+		window.setTimeout(function () {
+			$body.removeClass('is-preload');
+		}, 100);
+	});
 
 	// Clear transitioning state on unload/hide.
-		$window.on('unload pagehide', function() {
-			window.setTimeout(function() {
-				$('.is-transitioning').removeClass('is-transitioning');
-			}, 250);
-		});
+	$window.on('unload pagehide', function () {
+		window.setTimeout(function () {
+			$('.is-transitioning').removeClass('is-transitioning');
+		}, 250);
+	});
 
 	// Fix: Enable IE-only tweaks.
-		if (browser.name == 'ie' || browser.name == 'edge')
-			$body.addClass('is-ie');
+	if (browser.name == 'ie' || browser.name == 'edge')
+		$body.addClass('is-ie');
 
 	// Scrolly.
-		$('.scrolly').scrolly({
-			offset: function() {
-				return $header.height() - 2;
-			}
-		});
+	$('.scrolly').scrolly({
+		offset: function () {
+			return $header.height() - 2;
+		}
+	});
 
 	// Tiles.
-		var $tiles = $('.tiles > article');
+	var $tiles = $('.tiles > article');
 
-		$tiles.each(function() {
+	$tiles.each(function () {
 
-			var $this = $(this),
-				$image = $this.find('.image'), $img = $image.find('img'),
-				$link = $this.find('.link'),
-				x;
+		var $this = $(this),
+			$image = $this.find('.image'), $img = $image.find('img'),
+			$link = $this.find('.link'),
+			x;
 
-			// Image.
+		// Image.
 
-				// Set image.
-					$this.css('background-image', 'url(' + $img.attr('src') + ')');
+		// Set image.
+		$this.css('background-image', 'url(' + $img.attr('src') + ')');
 
-				// Set position.
-					if (x = $img.data('position'))
-						$image.css('background-position', x);
+		// Set position.
+		if (x = $img.data('position'))
+			$image.css('background-position', x);
 
-				// Hide original.
-					$image.hide();
+		// Hide original.
+		$image.hide();
 
-			// Link.
-				if ($link.length > 0) {
+		// Link.
+		if ($link.length > 0) {
 
-					$x = $link.clone()
-						.text('')
-						.addClass('primary')
-						.appendTo($this);
+			$x = $link.clone()
+				.text('')
+				.addClass('primary')
+				.appendTo($this);
 
-					$link = $link.add($x);
+			$link = $link.add($x);
 
-					$link.on('click', function(event) {
+			$link.on('click', function (event) {
 
-						var href = $link.attr('href');
+				var href = $link.attr('href');
 
-						// Prevent default.
-							event.stopPropagation();
-							event.preventDefault();
+				// Prevent default.
+				event.stopPropagation();
+				event.preventDefault();
 
-						// Target blank?
-							if ($link.attr('target') == '_blank') {
+				// Target blank?
+				if ($link.attr('target') == '_blank') {
 
-								// Open in new tab.
-									window.open(href);
-
-							}
-
-						// Otherwise ...
-							else {
-
-								// Start transitioning.
-									$this.addClass('is-transitioning');
-									$wrapper.addClass('is-transitioning');
-
-								// Redirect.
-									window.setTimeout(function() {
-										location.href = href;
-									}, 500);
-
-							}
-
-					});
+					// Open in new tab.
+					window.open(href);
 
 				}
 
-		});
+				// Otherwise ...
+				else {
+
+					// Start transitioning.
+					$this.addClass('is-transitioning');
+					$wrapper.addClass('is-transitioning');
+
+					// Redirect.
+					window.setTimeout(function () {
+						location.href = href;
+					}, 500);
+
+				}
+
+			});
+
+		}
+
+	});
 
 	// Header.
 
-	
-        
 
 
-		if ($banner.length > 0
-		&&	$header.hasClass('alt')) {
 
-			$window.on('resize', function() {
-				$window.trigger('scroll');
+
+	if ($banner.length > 0
+		&& $header.hasClass('alt')) {
+
+		$window.on('resize', function () {
+			$window.trigger('scroll');
+		});
+
+		$window.on('load', function () {
+
+			$banner.scrollex({
+				bottom: $header.height() + 10,
+				terminate: function () { $header.removeClass('alt'); },
+				enter: function () { $header.addClass('alt'); },
+				leave: function () { $header.removeClass('alt'); $header.addClass('reveal'); }
 			});
 
-			$window.on('load', function() {
-
-				$banner.scrollex({
-					bottom:		$header.height() + 10,
-					terminate:	function() { $header.removeClass('alt'); },
-					enter:		function() { $header.addClass('alt'); },
-					leave:		function() { $header.removeClass('alt'); $header.addClass('reveal'); }
-				});
-
-				window.setTimeout(function() {
-					$window.triggerHandler('scroll');
-				}, 100);
+			window.setTimeout(function () {
+				$window.triggerHandler('scroll');
+			}, 100);
 
 
 
-			});
+		});
 
 
-		}
+	}
 
 
 
 
 
 	// Banner.
-		$banner.each(function() {
+	$banner.each(function () {
 
-			var $this = $(this),
-				$image = $this.find('.image'), $img = $image.find('img');
+		var $this = $(this),
+			$image = $this.find('.image'), $img = $image.find('img');
 
-			// Parallax.
-				$this._parallax(0.275);
+		// Parallax.
+		$this._parallax(0.275);
 
-			// Image.
-				if ($image.length > 0) {
+		// Image.
+		if ($image.length > 0) {
 
-					// Set image.
-						$this.css('background-image', 'url(' + $img.attr('src') + ')');
+			// Set image.
+			$this.css('background-image', 'url(' + $img.attr('src') + ')');
 
-					// Hide original.
-						$image.hide();
+			// Hide original.
+			$image.hide();
 
-				}
+		}
+
+	});
+
+	// Menu.
+	var $menu = $('#menu'),
+		$menuInner;
+
+	$menu.wrapInner('<div class="inner"></div>');
+	$menuInner = $menu.children('.inner');
+	$menu._locked = false;
+
+	$menu._lock = function () {
+
+		if ($menu._locked)
+			return false;
+
+		$menu._locked = true;
+
+		window.setTimeout(function () {
+			$menu._locked = false;
+		}, 350);
+
+		return true;
+
+	};
+
+	$menu._show = function () {
+
+		if ($menu._lock())
+			$body.addClass('is-menu-visible');
+
+	};
+
+	$menu._hide = function () {
+
+		if ($menu._lock())
+			$body.removeClass('is-menu-visible');
+
+	};
+
+	$menu._toggle = function () {
+
+		if ($menu._lock())
+			$body.toggleClass('is-menu-visible');
+
+	};
+
+	$menuInner
+		.on('click', function (event) {
+			event.stopPropagation();
+		})
+		.on('click', 'a', function (event) {
+
+			var href = $(this).attr('href');
+
+			event.preventDefault();
+			event.stopPropagation();
+
+			// Hide.
+			$menu._hide();
+
+			// Redirect.
+			window.setTimeout(function () {
+				window.location.href = href;
+			}, 250);
 
 		});
 
-	// Menu.
-		var $menu = $('#menu'),
-			$menuInner;
+	$menu
+		.appendTo($body)
+		.on('click', function (event) {
 
-		$menu.wrapInner('<div class="inner"></div>');
-		$menuInner = $menu.children('.inner');
-		$menu._locked = false;
+			event.stopPropagation();
+			event.preventDefault();
 
-		$menu._lock = function() {
+			$body.removeClass('is-menu-visible');
 
-			if ($menu._locked)
-				return false;
+		})
+		.append('<a class="close" href="#menu">Close</a>');
 
-			$menu._locked = true;
+	$body
+		.on('click', 'a[href="#menu"]', function (event) {
 
-			window.setTimeout(function() {
-				$menu._locked = false;
-			}, 350);
+			event.stopPropagation();
+			event.preventDefault();
 
-			return true;
+			// Toggle.
+			$menu._toggle();
 
-		};
+		})
+		.on('click', function (event) {
 
-		$menu._show = function() {
+			// Hide.
+			$menu._hide();
 
-			if ($menu._lock())
-				$body.addClass('is-menu-visible');
+		})
+		.on('keydown', function (event) {
 
-		};
+			// Hide on escape.
+			if (event.keyCode == 27)
+				$menu._hide();
 
-		$menu._hide = function() {
-
-			if ($menu._lock())
-				$body.removeClass('is-menu-visible');
-
-		};
-
-		$menu._toggle = function() {
-
-			if ($menu._lock())
-				$body.toggleClass('is-menu-visible');
-
-		};
-
-		$menuInner
-			.on('click', function(event) {
-				event.stopPropagation();
-			})
-			.on('click', 'a', function(event) {
-
-				var href = $(this).attr('href');
-
-				event.preventDefault();
-				event.stopPropagation();
-
-				// Hide.
-					$menu._hide();
-
-				// Redirect.
-					window.setTimeout(function() {
-						window.location.href = href;
-					}, 250);
-
-			});
-
-		$menu
-			.appendTo($body)
-			.on('click', function(event) {
-
-				event.stopPropagation();
-				event.preventDefault();
-
-				$body.removeClass('is-menu-visible');
-
-			})
-			.append('<a class="close" href="#menu">Close</a>');
-
-		$body
-			.on('click', 'a[href="#menu"]', function(event) {
-
-				event.stopPropagation();
-				event.preventDefault();
-
-				// Toggle.
-					$menu._toggle();
-
-			})
-			.on('click', function(event) {
-
-				// Hide.
-					$menu._hide();
-
-			})
-			.on('keydown', function(event) {
-
-				// Hide on escape.
-					if (event.keyCode == 27)
-						$menu._hide();
-
-			});
+		});
 
 
 
 
-		const typedTextSpan = document.querySelector(".typed-text");
-const cursorSpan = document.querySelector(".cursor");
+	const typedTextSpan = document.querySelector(".typed-text");
+	const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ["infinity", "Software-Developer", "Learner", "CTF-Player"];
-const typingDelay = 100;
-const erasingDelay = 70;
-const newTextDelay = 1500; // Delay between current and next text
-let textArrayIndex = 0;
-let charIndex = 0;
+	const textArray = ["infinity", "Software-Developer", "Learner", "CTF-Player"];
+	const typingDelay = 100;
+	const erasingDelay = 70;
+	const newTextDelay = 1500; // Delay between current and next text
+	let textArrayIndex = 0;
+	let charIndex = 0;
 
-function type() {
-  if (charIndex < textArray[textArrayIndex].length) {
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, typingDelay);
-  } 
-  else {
-    cursorSpan.classList.remove("typing");
-  	setTimeout(erase, newTextDelay);
-  }
-}
+	function type() {
+		if (charIndex < textArray[textArrayIndex].length) {
+			if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+			typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+			charIndex++;
+			setTimeout(type, typingDelay);
+		}
+		else {
+			cursorSpan.classList.remove("typing");
+			setTimeout(erase, newTextDelay);
+		}
+	}
 
-function erase() {
-	if (charIndex > 0) {
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
-    charIndex--;
-    setTimeout(erase, erasingDelay);
-  } 
-  else {
-    cursorSpan.classList.remove("typing");
-    textArrayIndex++;
-    if(textArrayIndex>=textArray.length) textArrayIndex=0;
-    setTimeout(type, typingDelay + 1100);
-  }
-}
+	function erase() {
+		if (charIndex > 0) {
+			if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+			typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+			charIndex--;
+			setTimeout(erase, erasingDelay);
+		}
+		else {
+			cursorSpan.classList.remove("typing");
+			textArrayIndex++;
+			if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+			setTimeout(type, typingDelay + 1100);
+		}
+	}
 
-document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
-  if(textArray.length) setTimeout(type, newTextDelay + 250);
-});	
-
-
-
-			
+	document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
+		if (textArray.length) setTimeout(type, newTextDelay + 250);
+	});
 
 
-			
+
+
+
+
+
 })(jQuery);

@@ -298,51 +298,63 @@ p {
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	} */
+/* General h1 Styling */
 h1 {
-	display: inline-block;
-	color: white;
-	font-family: 'Righteous', serif;
-	font-size: 80px;
-	text-shadow: .07em .03em 0 hsla(230, 40%, 50%, 1);
+    display: inline-block;
+    color: white;
+    font-family: 'Righteous', serif;
+    font-size: 6vw; /* Use viewport width for responsiveness */
+    text-shadow: 0.07em 0.03em 0 hsla(230, 40%, 50%, 1);
+    position: relative; /* Ensure proper positioning for pseudo-elements */
+    margin: 0; /* Remove default margin for better alignment */
 }
 
+/* Shadow Effect */
 h1:after {
-	content: attr(data-shadow);
-	position: absolute;
-	top: .06em;
-	left: .06em;
-	z-index: -1;
-	text-shadow: none;
-	background-image:
-		linear-gradient(85deg,
-			transparent 45%,
-			hsla(48, 20%, 90%, 1) 45%,
-			hsla(48, 20%, 90%, 1) 55%,
-			transparent 0);
-	background-size: .05em .05em;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    content: attr(data-shadow);
+    position: absolute;
+    top: 0.06em;
+    left: 0.06em;
+    z-index: -1;
+    text-shadow: none;
+    background-image: linear-gradient(
+        85deg,
+        transparent 45%,
+        hsla(48, 20%, 90%, 1) 45%,
+        hsla(48, 20%, 90%, 1) 55%,
+        transparent 0
+    );
+    background-size: 0.05em 0.05em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-	animation: shad-anim 15s linear infinite;
+    animation: shad-anim 15s linear infinite;
 }
 
+/* Keyframes for Gradient Animation */
 @keyframes shad-anim {
-	0% {
-		background-position: 0 0
-	}
+    0% {
+        background-position: 0 0;
+    }
 
-	0% {
-		background-position: 100% -100%
-	}
+    100% {
+        background-position: 100% -100%;
+    }
 }
-h2{
-	display: inline-block;
-	color: #ffffff;
-	font-weight: 600;
-	line-height: 1.65;
-	margin: 0 0 1em 0;
 
+/* General h2 Styling */
+h2 {
+    display: block; /* Change to block for mobile readability */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 4vw; /* Responsive font size */
+    line-height: 1.5;
+    margin: 0 0 1em 0;
+     /* Center-align for smaller screens */
 }
+
+
+
 
 h3,
 h4,
@@ -1698,7 +1710,7 @@ hr.major {
 		flex-wrap: wrap;
 		box-sizing: border-box;
 		align-items: stretch;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 	.row>* {
@@ -1937,12 +1949,32 @@ hr.major {
 
 }
 
+/* Circular Blur Effect */
+.cursor-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px; /* Increase size for larger radius */
+    height: 100px; /* Increase size for larger radius */
+    background: radial-gradient(
+        circle,
+        hsla(230, 40%, 50%, 1) 0%,  /* Center color with transparency */
+        rgb(116, 127, 183) 40%, /* Mid-point fade */
+        rgba(255, 0, 150, 0) 40%  /* Full transparency at the edge */
+    );
+    border-radius: 50%;
+    pointer-events: none; /* Prevent interactions */
+    z-index: 9999;
+    transition: transform 0.05s ease-out; /* Smooth movement */
+    filter: blur(15px); /* Add more blur for softness */
+}
+
 /* Section/Article */
 
 section.special,
 article.special {
 	text-align: center;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 header.major {
@@ -1951,13 +1983,13 @@ header.major {
 	width: -ms-max-content;
 	width: max-content;
 	margin-bottom: 2em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 header.major> :first-child {
 	margin-bottom: 0;
 	width: calc(100% + 0.5em);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 header.major> :first-child:after {
@@ -1967,7 +1999,7 @@ header.major> :first-child:after {
 	height: 2px;
 	margin: 0.325em 0 0.5em 0;
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 header.major>p {
@@ -1976,24 +2008,24 @@ header.major>p {
 	letter-spacing: 0.25em;
 	margin-bottom: 0;
 	text-transform: uppercase;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 body.is-ie header.major> :first-child:after {
 	max-width: 9em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 body.is-ie header.major>h1:after {
 	max-width: 100% !important;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 @media screen and (max-width: 736px) {
 
 	header.major>p br {
 		display: none;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -2006,7 +2038,7 @@ form {
 
 form> :last-child {
 	margin-bottom: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 form>.fields {
@@ -2020,7 +2052,7 @@ form>.fields {
 	flex-wrap: wrap;
 	width: calc(100% + 3em);
 	margin: -1.5em 0 2em -1.5em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 form>.fields>.field {
@@ -2034,22 +2066,22 @@ form>.fields>.field {
 	flex-shrink: 0;
 	padding: 1.5em 0 0 1.5em;
 	width: calc(100% - 1.5em);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 form>.fields>.field.half {
 	width: calc(50% - 0.75em);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 form>.fields>.field.third {
 	width: calc(100%/3 - 0.5em);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 form>.fields>.field.quarter {
 	width: calc(25% - 0.375em);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 @media screen and (max-width: 480px) {
@@ -2086,7 +2118,7 @@ label {
 	letter-spacing: 0.25em;
 	margin: 0 0 1em 0;
 	text-transform: uppercase;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="text"],
@@ -2110,7 +2142,7 @@ textarea {
 	padding: 0 1em;
 	text-decoration: none;
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="text"]:invalid,
@@ -2185,7 +2217,7 @@ input[type="radio"] {
 	opacity: 0;
 	width: 1em;
 	z-index: -1;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="checkbox"]+label,
@@ -2198,7 +2230,7 @@ input[type="radio"]+label {
 	padding-left: 2.65em;
 	padding-right: 0.75em;
 	position: relative;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="checkbox"]+label:before,
@@ -2213,7 +2245,7 @@ input[type="radio"]+label:before {
 	text-transform: none !important;
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="Arial"]+label:before,
@@ -2230,7 +2262,7 @@ input[type="Arial"]+label:before {
 	text-align: center;
 	top: 0;
 	width: 2.0625em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="checkbox"]:checked+label:before,
@@ -2248,31 +2280,31 @@ input[type="radio"]:focus+label:before {
 
 input[type="radio"]+label:before {
 	border-radius: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 ::-webkit-input-placeholder {
 	color: rgba(244, 244, 255, 0.2) !important;
 	opacity: 1.0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 :-moz-placeholder {
 	color: rgba(244, 244, 255, 0.2) !important;
 	opacity: 1.0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 ::-moz-placeholder {
 	color: rgba(244, 244, 255, 0.2) !important;
 	opacity: 1.0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 :-ms-input-placeholder {
 	color: rgba(244, 244, 255, 0.2) !important;
 	opacity: 1.0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 /* Box */
@@ -2281,21 +2313,21 @@ input[type="radio"]+label:before {
 	border: solid 1px rgba(212, 212, 255, 0.1);
 	margin-bottom: 2em;
 	padding: 1.5em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .box> :last-child,
 .box> :last-child> :last-child,
 .box> :last-child> :last-child> :last-child {
 	margin-bottom: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .box.alt {
 	border: 0;
 	border-radius: 0;
 	padding: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 /* Icon */
@@ -2304,7 +2336,7 @@ input[type="radio"]+label:before {
 	text-decoration: none;
 	border-bottom: none;
 	position: relative;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .icon:before {
@@ -2318,27 +2350,27 @@ input[type="radio"]+label:before {
 	text-transform: none !important;
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 400;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .icon>.label {
 	display: none;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .icon:before {
 	line-height: inherit;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .icon.solid:before {
 	font-weight: 900;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .icon.brands:before {
 	font-family: 'Font Awesome 5 Brands';
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .icon.alt:before {
@@ -2350,7 +2382,7 @@ input[type="radio"]+label:before {
 	line-height: 2em;
 	text-align: center;
 	width: 2em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 a.icon.alt:before {
@@ -2358,17 +2390,17 @@ a.icon.alt:before {
 	-webkit-transition: background-color 0.2s ease-in-out;
 	-ms-transition: background-color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 a.icon.alt:hover:before {
 	background-color: #6fc3df;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 a.icon.alt:active:before {
 	background-color: #37a6cb;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 /* Image */
@@ -2377,69 +2409,69 @@ a.icon.alt:active:before {
 	border: 0;
 	display: inline-block;
 	position: relative;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .image img {
 	display: block;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .image.left,
 .image.right {
 	max-width: 30%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .image.left img,
 .image.right img {
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .image.left {
 	float: left;
 	margin: 0 1.5em 1.25em 0;
 	top: 0.25em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .image.right {
 	float: right;
 	margin: 0 0 1.25em 1.5em;
 	top: 0.25em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .image.fit {
 	display: block;
 	margin: 0 0 2em 0;
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .image.fit img {
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .image.main {
 	display: block;
 	margin: 2.5em 0;
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .image.main img {
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 @media screen and (max-width: 736px) {
 
 	.image.main {
 		margin: 1.5em 0;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -2506,7 +2538,7 @@ ul.actions {
 	list-style: none;
 	margin-left: -1em;
 	padding-left: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 ul.actions li {
@@ -2521,7 +2553,7 @@ ul.actions.special {
 	justify-content: center;
 	width: 100%;
 	margin-left: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 ul.actions.special li:first-child {
@@ -2534,7 +2566,7 @@ ul.actions.stacked {
 	-ms-flex-direction: column;
 	flex-direction: column;
 	margin-left: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 ul.actions.stacked li {
@@ -2559,46 +2591,30 @@ ul.actions.fit li {
 	-ms-flex-shrink: 1;
 	flex-shrink: 1;
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 ul.actions.fit li>* {
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 ul.actions.fit.stacked {
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
-
 /* Icons */
+ul.icons { cursor: default; list-style: none; padding-left: 0; cursor: url('../../images/square-rounded.png'), auto; }
 
-ul.icons {
-	cursor: default;
-	list-style: none;
-	padding-left: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
-}
+ul.icons li { display: inline-block; padding: 0 1em 0 0; cursor: url('../../images/square-rounded.png'), auto; }
 
-ul.icons li {
-	display: inline-block;
-	padding: 0 1em 0 0;
-	cursor: url('../../images/square-rounded.png'), auto;
-}
-
-ul.icons li:last-child {
-	padding-right: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
-}
+ul.icons li:last-child { padding-right: 0; cursor: url('../../images/square-rounded.png'), auto; }
 
 @media screen and (max-width: 736px) {
-
 	ul.icons li {
 		padding: 0 0.75em 0 0;
 		cursor: url('../../images/square-rounded.png'), auto;
 	}
-
 }
 
 /* Pagination */
@@ -2607,14 +2623,14 @@ ul.pagination {
 	cursor: default;
 	list-style: none;
 	padding-left: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 ul.pagination li {
 	display: inline-block;
 	padding-left: 0;
 	vertical-align: middle;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 ul.pagination li>.page {
@@ -2632,13 +2648,13 @@ ul.pagination li>.page {
 	min-width: 1.5em;
 	padding: 0 0.5em;
 	text-align: center;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 ul.pagination li>.page.active {
 	background-color: #ffffff;
 	color: #242943;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 ul.pagination li>.page.active:hover {
@@ -2680,19 +2696,19 @@ ul.pagination li:last-child {
 table {
 	margin: 0 0 2em 0;
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 table tbody tr {
 	border: solid 1px rgba(212, 212, 255, 0.1);
 	border-left: 0;
 	border-right: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 table tbody tr:nth-child(2n + 1) {
 	background-color: rgba(212, 212, 255, 0.035);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 table td {
@@ -2705,17 +2721,17 @@ table th {
 	font-weight: 600;
 	padding: 0 0.75em 0.75em 0.75em;
 	text-align: left;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 table thead {
 	border-bottom: solid 2px rgba(212, 212, 255, 0.1);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 table tfoot {
 	border-top: solid 2px rgba(212, 212, 255, 0.1);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 table.alt {
@@ -2726,27 +2742,27 @@ table.alt tbody tr td {
 	border: solid 1px rgba(212, 212, 255, 0.1);
 	border-left-width: 0;
 	border-top-width: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 table.alt tbody tr td:first-child {
 	border-left-width: 1px;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 table.alt tbody tr:first-child td {
 	border-top-width: 1px;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 table.alt thead {
 	border-bottom: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 table.alt tfoot {
 	border-top: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 /* Button */
@@ -2781,7 +2797,7 @@ button,
 	text-decoration: none;
 	text-transform: uppercase;
 	white-space: nowrap;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="submit"]:hover,
@@ -2796,7 +2812,7 @@ button:active,
 .button:active {
 	box-shadow: inset 0 0 0 2px #9bf1ff;
 	color: #9bf1ff;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="submit"]:active,
@@ -2807,7 +2823,7 @@ button:active,
 	background-color: rgba(155, 241, 255, 0.1);
 	box-shadow: inset 0 0 0 2px #53e3fb;
 	color: #53e3fb;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="submit"].icon:before,
@@ -2816,7 +2832,7 @@ input[type="button"].icon:before,
 button.icon:before,
 .button.icon:before {
 	margin-right: 0.5em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="submit"].fit,
@@ -2825,7 +2841,7 @@ input[type="button"].fit,
 button.fit,
 .button.fit {
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="submit"].small,
@@ -2834,7 +2850,7 @@ input[type="button"].small,
 button.small,
 .button.small {
 	font-size: 0.6em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="submit"].large,
@@ -2845,7 +2861,7 @@ button.large,
 	font-size: 1.25em;
 	height: 3em;
 	line-height: 3em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="submit"].next,
@@ -2855,7 +2871,7 @@ button.next,
 .button.next {
 	padding-right: 4.5em;
 	position: relative;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="submit"].next:before,
@@ -2883,7 +2899,7 @@ button.next:after,
 	top: 0;
 	vertical-align: middle;
 	width: 36px;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 input[type="submit"].next:before,
@@ -2974,7 +2990,7 @@ button:disabled,
 	pointer-events: none;
 	cursor: default;
 	opacity: 0.25;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 /* Tiles */
@@ -2989,7 +3005,7 @@ button:disabled,
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	border-top: 0 !important;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .tiles+* {
@@ -3020,28 +3036,28 @@ button:disabled,
 	overflow: hidden;
 	position: relative;
 	width: 40%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .tiles article .image {
 	display: none;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .tiles article header {
 	position: relative;
 	z-index: 3;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .tiles article h3 {
 	font-size: 1.75em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .tiles article h3 a:hover {
 	color: inherit !important;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .tiles article .link.primary {
@@ -3052,7 +3068,7 @@ button:disabled,
 	top: 0;
 	width: 100%;
 	z-index: 4;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .tiles article:before {
@@ -3069,7 +3085,7 @@ button:disabled,
 	position: absolute;
 	width: 100%;
 	z-index: 2;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .tiles article:after {
@@ -3082,12 +3098,12 @@ button:disabled,
 	top: 0;
 	width: 100%;
 	z-index: 1;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .tiles article:hover:before {
 	opacity: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .tiles article.is-transitioning {
@@ -3100,7 +3116,7 @@ button:disabled,
 	-ms-filter: blur(0.5em);
 	filter: blur(0.5em);
 	opacity: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .tiles article:nth-child(4n - 1),
@@ -3139,7 +3155,7 @@ button:disabled,
 		height: 30vh;
 		max-height: 30em;
 		min-height: 20em;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -3148,7 +3164,7 @@ button:disabled,
 
 	.tiles article {
 		width: 50% !important;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -3160,12 +3176,12 @@ button:disabled,
 		height: 16em;
 		max-height: none;
 		min-height: 0;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 	.tiles article h3 {
 		font-size: 1.5em;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -3174,13 +3190,13 @@ button:disabled,
 
 	.tiles {
 		display: block;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 	.tiles article {
 		height: 20em;
 		width: 100% !important;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -3191,31 +3207,31 @@ button:disabled,
 	margin: 0 0 2em 0;
 	padding-left: 3.25em;
 	position: relative;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .contact-method .icon {
 	left: 0;
 	position: absolute;
 	top: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .contact-method h3 {
 	margin: 0 0 0.5em 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 /* Spotlights */
 
 .spotlights {
 	border-top: 0 !important;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .spotlights+* {
 	border-top: 0 !important;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .spotlights>section {
@@ -3228,7 +3244,7 @@ button:disabled,
 	-ms-flex-direction: row;
 	flex-direction: row;
 	background-color: #2e3450;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .spotlights>section>.image {
@@ -3238,14 +3254,14 @@ button:disabled,
 	display: block;
 	position: relative;
 	width: 30%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .spotlights>section>.image img {
 	border-radius: 0;
 	display: block;
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .spotlights>section>.image:before {
@@ -3258,7 +3274,7 @@ button:disabled,
 	position: absolute;
 	top: 0;
 	width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .spotlights>section>.content {
@@ -3280,7 +3296,7 @@ button:disabled,
 	align-items: center;
 	padding: 2em 3em 0.1em 3em;
 	width: 70%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 .spotlights>section>.content>.inner {
@@ -3422,7 +3438,7 @@ button:disabled,
 	top: 0;
 	width: 100%;
 	z-index: 10000;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #header .logo {
@@ -3432,7 +3448,7 @@ button:disabled,
 	height: inherit;
 	line-height: inherit;
 	padding: 0 1em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #header .logo strong {
@@ -3446,7 +3462,7 @@ button:disabled,
 	line-height: 1.65em;
 	margin-right: 0.325em;
 	padding: 0 0.125em 0 0.375em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #header .logo:hover strong {
@@ -3472,7 +3488,7 @@ button:disabled,
 	flex-grow: 1;
 	height: inherit;
 	line-height: inherit;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #header nav a {
@@ -3484,7 +3500,7 @@ button:disabled,
 	padding: 0 0.75em;
 	position: relative;
 	vertical-align: middle;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #header nav a:last-child {
@@ -3509,7 +3525,7 @@ button:disabled,
 	top: 0;
 	vertical-align: middle;
 	width: 24px;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #header nav a[href="#menu"]:after {
@@ -3520,7 +3536,7 @@ button:disabled,
 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='32' viewBox='0 0 24 32' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 2px%3B stroke: %239bf1ff%3B %7D%3C/style%3E%3Cline x1='0' y1='11' x2='24' y2='11' /%3E%3Cline x1='0' y1='21' x2='24' y2='21' /%3E%3Cline x1='0' y1='16' x2='24' y2='16' /%3E%3C/svg%3E");
 	opacity: 0;
 	z-index: 1;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #header nav a[href="#menu"]:hover:after,
@@ -3542,7 +3558,7 @@ button:disabled,
 	-webkit-animation: reveal-header 0.35s ease;
 	-ms-animation: reveal-header 0.35s ease;
 	animation: reveal-header 0.35s ease;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #header.alt {
@@ -3561,7 +3577,7 @@ button:disabled,
 	background-color: transparent;
 	box-shadow: none;
 	position: absolute;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #header.alt.style1 .logo strong {
@@ -3708,7 +3724,7 @@ body.is-preload #header.alt {
 	min-height: 22em;
 	position: relative;
 	top: -3.25em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner:after {
@@ -3731,12 +3747,12 @@ body.is-preload #header.alt {
 	top: 0;
 	width: 100%;
 	z-index: 1;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner h1 {
 	font-size: 3.25em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner>.inner {
@@ -3747,27 +3763,27 @@ body.is-preload #header.alt {
 	padding: 0 !important;
 	position: relative;
 	z-index: 2;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner>.inner .image {
 	display: none;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner>.inner header {
 	width: auto;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner>.inner header> :first-child {
 	width: auto;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner>.inner header> :first-child:after {
 	max-width: 100%;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner>.inner .content {
@@ -3780,18 +3796,18 @@ body.is-preload #header.alt {
 	-ms-align-items: center;
 	align-items: center;
 	margin: 0 0 2em 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner>.inner .content>* {
 	margin-right: 1.5em;
 	margin-bottom: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner>.inner .content> :last-child {
 	margin-right: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner>.inner .content p {
@@ -3799,19 +3815,19 @@ body.is-preload #header.alt {
 	font-weight: 600;
 	letter-spacing: 0.25em;
 	text-transform: unset;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner.major {
 	height: 75vh;
 	min-height: 30em;
 	max-height: 50em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner.major.alt {
 	opacity: 0.75;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner.style1:after {
@@ -3820,32 +3836,32 @@ body.is-preload #header.alt {
 
 #banner.style2:after {
 	background-image: #000000;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner.style3:after {
 	background-color: #ec8d81;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner.style4:after {
 	background-color: #e7b788;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner.style5:after {
 	background-color: #8ea9e8;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #banner.style6:after {
 	background-color: #87c5a4;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 body.is-preload #banner:after {
 	opacity: 1.0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 body.is-preload #banner>.inner {
@@ -3858,14 +3874,14 @@ body.is-preload #banner>.inner {
 	-ms-transform: translateX(-0.5em);
 	transform: translateX(-0.5em);
 	opacity: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 @media screen and (max-width: 1280px) {
 
 	#banner {
 		background-attachment: scroll;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -3879,30 +3895,30 @@ body.is-preload #banner>.inner {
 		max-height: none;
 		min-height: 0;
 		top: -2.75em;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 	#banner h1 {
 		font-size: 2em;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 	#banner>.inner .content {
 		display: block;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 	#banner>.inner .content>* {
 		margin-right: 0;
 		margin-bottom: 2em;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 	#banner.major {
 		height: auto;
 		min-height: 0;
 		max-height: none;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -3911,17 +3927,17 @@ body.is-preload #banner>.inner {
 
 	#banner {
 		padding: 6em 0 2em 0;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 	#banner>.inner .content p br {
 		display: none;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 	#banner.major {
 		padding: 8em 0 4em 0;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -3934,12 +3950,12 @@ body.is-preload #banner>.inner {
 
 #main>* {
 	border-top: solid 1px rgba(255, 0, 0, 0.205);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #main>*:first-child {
 	border-top: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #main>*>.inner {
@@ -3947,7 +3963,7 @@ body.is-preload #banner>.inner {
 	margin: 0 auto;
 	max-width: 65em;
 	width: calc(100% - 6em);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 @media screen and (max-width: 736px) {
@@ -3955,7 +3971,7 @@ body.is-preload #banner>.inner {
 	#main>*>.inner {
 		padding: 3em 0 1em 0;
 		width: calc(100% - 3em);
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -3963,7 +3979,7 @@ body.is-preload #banner>.inner {
 #main.alt {
 	background-color: transparent;
 	border-bottom: solid 1px rgba(212, 212, 255, 0.1);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 
@@ -3979,7 +3995,7 @@ body.is-preload #banner>.inner {
 	font-size: 1.3em;
 	list-style: none;
 	padding-left: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #footer .copyright li {
@@ -3989,14 +4005,14 @@ body.is-preload #banner>.inner {
 	line-height: 1;
 	margin-left: 1em;
 	padding-left: 1em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #footer .copyright li:first-child {
 	border-left: 0;
 	margin-left: 0;
 	padding-left: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 @media screen and (max-width: 480px) {
@@ -4007,7 +4023,7 @@ body.is-preload #banner>.inner {
 		margin-left: 0;
 		padding-left: 0;
 		line-height: inherit;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -4020,7 +4036,7 @@ body.is-preload #banner>.inner {
 	-ms-transition: -ms-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 	transition: filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 	padding-top: 3.25em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #wrapper.is-transitioning {
@@ -4032,7 +4048,7 @@ body.is-preload #banner>.inner {
 	margin: 0 auto;
 	max-width: 65em;
 	width: calc(100% - 6em);
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 @media screen and (max-width: 736px) {
@@ -4040,7 +4056,7 @@ body.is-preload #banner>.inner {
 	#wrapper>*>.inner {
 		padding: 3em 0 1em 0;
 		width: calc(100% - 3em);
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -4049,7 +4065,7 @@ body.is-preload #banner>.inner {
 
 	#wrapper {
 		padding-top: 2.75em;
-		cursor: url('../../images/square-rounded.png'), auto;
+		cursor: url('../../images/icons8-circle-24.png'), auto;
 	}
 
 }
@@ -4086,7 +4102,7 @@ body.is-preload #banner>.inner {
 	visibility: hidden;
 	width: 100%;
 	z-index: 10002;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #menu .inner {
@@ -4106,33 +4122,33 @@ body.is-preload #banner>.inner {
 	text-align: center;
 	visibility: hidden;
 	width: 18em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #menu .inner> :first-child {
 	margin-top: 2em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #menu .inner> :last-child {
 	margin-bottom: 3em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #menu ul {
 	margin: 0 0 1em 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #menu ul.links {
 	list-style: none;
 	padding: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #menu ul.links>li {
 	padding: 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #menu ul.links>li>a:not(.button) {
@@ -4145,18 +4161,18 @@ body.is-preload #banner>.inner {
 	line-height: 4em;
 	text-decoration: none;
 	text-transform: uppercase;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #menu ul.links>li>.button {
 	display: block;
 	margin: 0.5em 0 0 0;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #menu ul.links>li:first-child>a:not(.button) {
 	border-top: 0 !important;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #menu .close {
@@ -4180,7 +4196,7 @@ body.is-preload #banner>.inner {
 	vertical-align: middle;
 	white-space: nowrap;
 	width: 8em;
-	cursor: url('../../images/square-rounded.png'), auto;
+	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
 
 #menu .close:before,
