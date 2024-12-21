@@ -301,6 +301,12 @@ p {
 /* General h1 Styling */
 h1 {
     display: inline-block;
+
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+
     color: white;
     font-family: 'Righteous', serif;
     font-size: 6vw; /* Use viewport width for responsiveness */
@@ -1982,6 +1988,7 @@ header.major {
 	width: -webkit-max-content;
 	width: -ms-max-content;
 	width: max-content;
+
 	margin-bottom: 2em;
 	cursor: url('../../images/icons8-circle-24.png'), auto;
 }
@@ -3820,6 +3827,7 @@ body.is-preload #header.alt {
 
 #banner.major {
 	height: 75vh;
+	
 	min-height: 30em;
 	max-height: 50em;
 	cursor: url('../../images/icons8-circle-24.png'), auto;
