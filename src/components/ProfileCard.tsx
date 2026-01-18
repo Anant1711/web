@@ -28,14 +28,9 @@ interface ProfileCardProps {
     enableTilt?: boolean;
     enableMobileTilt?: boolean;
     mobileTiltSensitivity?: number;
-    miniAvatarUrl?: string;
     name?: string;
     title?: string;
-    handle?: string;
-    status?: string;
-    contactText?: string;
     showUserInfo?: boolean;
-    onContactClick?: () => void;
 }
 
 const ProfileCardComponent: React.FC<ProfileCardProps> = ({
@@ -50,14 +45,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     enableTilt = true,
     enableMobileTilt = false,
     mobileTiltSensitivity = 5,
-    miniAvatarUrl,
     name = 'Anant Chauhan',
     title = 'Software Engineer',
-    handle = 'anantchauhan',
-    status = 'Online',
-    contactText = 'Contact',
     showUserInfo = true,
-    onContactClick
 }) => {
     const wrapRef = useRef<HTMLDivElement>(null);
     const shellRef = useRef<HTMLDivElement>(null);

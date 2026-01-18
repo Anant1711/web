@@ -38,13 +38,8 @@ function App() {
           <ProfileCard
             name="Anant Chauhan"
             title="Software Engineer"
-            handle="anantchauhan"
-            contactText="Contact Me"
             avatarUrl="/image.jpeg"
             showUserInfo={true}
-            enableTilt={true}
-            enableMobileTilt={true}
-            onContactClick={() => window.open('mailto:test@example.com')} // Placeholder or actual link if known
           />
         </div>
       </div>
