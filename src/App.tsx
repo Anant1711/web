@@ -38,7 +38,7 @@ function App() {
           <ProfileCard
             name="Anant Chauhan"
             title="Software Engineer"
-            avatarUrl="/image.jpeg"
+            avatarUrl={import.meta.env.BASE_URL + "image.jpeg"}
             showUserInfo={true}
           />
         </div>
